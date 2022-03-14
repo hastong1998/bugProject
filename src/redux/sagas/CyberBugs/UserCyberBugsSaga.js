@@ -45,8 +45,8 @@ function* signinSaga(action) {
 
     history.push("/projectManagement");
   } catch (error) {
-    console.log(error);
-    openNotificationWithIcon("error", error.reponse?.data.content);
+    console.log(error.response?.data.message);
+    openNotificationWithIcon("error", error.response?.data.message);
   }
   yield put({
     type: HIDE_LOADING,
